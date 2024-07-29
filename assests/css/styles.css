@@ -1,0 +1,214 @@
+@import url("https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap");
+
+:root {
+  --header-height: 3.5rem;
+  /*===== Colors =====*/
+  /*color mode HSL (hue, saturation, lightness)*/
+  /*
+    change favorite color
+    Default: hsl(230, 55%, 55%)
+    Purple: hsl(245, 55%, 55%) -Blue: hsl(210,55%, 55%)
+    Pink: hsl(340,55%, 55%) - green: hsl(162, 55% 55%)
+    Orange: hsl(14,55%, 55%)
+
+    for more colors visit:
+    -> Choose any colors
+    -> Click on tab (Color Conversation)
+    -> Copy the color mode (HSL)
+    */
+  --hue: 230;
+  --first-color: hsl(var(--hue), 55%, 55%);
+  --first-color-light: hsl(var(--hue), 55%, 65%);
+  --first-color-alt: hsl(var(--hue), 50%, 50%);
+  --title-color: hsl(var(--hue), 30%, 95%);
+  --text-color: hsl(var(--hue), 20%, 80%);
+  --text-color-light: hsl(var(--hue), 20%, 70%);
+  /*backround #181E39 */
+  /* rgba(24,30,57,1) */
+  --body-color: hsl(var(--hue), 40%, 16%); 
+  /* container #1F2547 */
+  --container-color: hsl(var(--hue), 40%, 20%);
+
+  /*===== FONTS AND TYPOGRAPHY =====*/
+  /*.5rem = 8px | 1rem =16px ..*/
+  --body--font: "Syne", sans-serif;
+  --biggest-font-size: 3rem;
+  --big-font-size: 1.5rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+
+  /*===== FONT WEIGHT =====*/
+  --font-regular: 400;
+  --font-semi-bold: 600;
+  --font-bold: 700;
+
+  /*===== Z INDEX =====*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: var(--body--font);
+}
+body {
+    background-color: var(--body-color);
+}
+.quote-box {
+  background-color: var(--container-color);
+  width: 700px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 40px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 10px 20px 0px rgba( 0 0 0 0.15);
+  color: var(--text-color);
+}
+
+.quote-box h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.quote-box h2::after {
+  content: '';
+  width: 75px;
+  height: 3px;
+  border-radius: 5px;
+  background: rgb(23,124, 229);
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%)
+}
+
+.quote-box blockquote {
+  font-size: 26px;
+  min-height: 110px;
+}
+.quote-box blockquote::before, .quote-box blockquote::after {
+  content: '"';
+}
+
+.quote-box span {
+  display: block;
+  margin-top:10px;
+  float:right;
+  position:relative;
+}
+
+.quote-box span::before {
+  content: '';
+  width: 20px;
+  height: 2px;
+  background:rgb(23, 124, 229);
+  position: absolute;
+  top: 50%;
+  left: -30px;
+}
+.quote-box div {
+  width: 100%;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.quote-box button {
+  background: rgb(23,124,229);
+  color: var(--text-color);
+  border-radius: 10px;
+  border: 1px solid rgb(23, 124, 229);
+  width: 150px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5px;
+  cursor: pointer;
+  font-weight: var(--font-bold);
+  line-height: 4px; 
+}
+
+.quote-box button:hover {
+  background: var(--text-color);
+  color: rgb(23, 124, 229);
+}
+
+@media (max-width: 1440px) {
+  .quote-box {
+    width: 80%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .quote-box {
+    width: 70%;
+  }
+}
+
+@media (max-width: 768px) {
+  .quote-box {
+    width: 90%;
+  }
+
+  .quote-box h2 {
+    font-size: 1.5rem;
+  }
+
+  .quote-box blockquote {
+    font-size: 1.2rem;
+  }
+
+  .quote-box button {
+    width: 120px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 425px) {
+  .quote-box {
+    width: 95%;
+  }
+
+  .quote-box h2 {
+    font-size: 1.25rem;
+  }
+
+  .quote-box blockquote {
+    font-size: 1rem;
+  }
+
+  .quote-box button {
+    width: 100px;
+    height: 35px;
+  }
+}
+
+@media (max-width: 375px) {
+  .quote-box {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .quote-box h2 {
+    font-size: 1rem;
+  }
+
+  .quote-box blockquote {
+    font-size: 0.9rem;
+  }
+
+  .quote-box button {
+    width: 90px;
+    height: 30px;
+  }
+}
